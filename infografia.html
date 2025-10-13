@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: PERÚ FUERTE - Escudo de Hierro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #073B4C;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 450px;
+            }
+        }
+        .flow-arrow::after {
+            content: '→';
+            font-size: 2rem;
+            color: #FFD166;
+            margin: 0 1rem;
+        }
+        .flow-item:last-child .flow-arrow::after {
+            content: '';
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <!-- ENCABEZADO CENTRADO -->
+        <header class="mb-10 p-6 bg-white rounded-xl shadow-lg border-t-4 border-[#FF6B6B]">
+            <!-- El contenedor flex usa w-fit y mx-auto para centrar todo el bloque de contenido -->
+            <div class="flex items-start space-x-4 mx-auto w-fit">
+                <!-- Logo a la izquierda -->
+                <img src="logo.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/100x40/FF6B6B/ffffff?text=LOGO';" alt="Logo ONG" class="h-20 w-auto rounded-md flex-shrink-0 mt-2">
+                <!-- Contenido de texto alineado a la izquierda, junto al logo -->
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-[#118AB2]">RESUMEN EJECUTIVO</h1>
+                    <h2 class="text-xl font-bold text-gray-800 mt-1">PERÚ FUERTE: Escudo de Hierro</h2>
+                    <p class="text-md font-semibold text-[#073B4C] mt-0.5">ONG RENOVADOR IMPULSO | Nov 2025 - Dic 2027</p>
+                </div>
+            </div>
+        </header>
+
+        <section id="hero-kpis" class="py-4">
+            <p class="mt-4 text-lg md:text-xl text-center max-w-3xl mx-auto text-[#073B4C] mb-8">Una iniciativa de alto impacto para la reducción acelerada de la anemia y la desnutrición crónica infantil en el Perú.</p>
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-4xl font-bold text-[#FF6B6B]">41.8%</p>
+                    <p class="mt-2 text-gray-600">Prevalencia de Anemia (Línea Base 2024E)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-4xl font-bold text-[#06D6A0]">25.0%</p>
+                    <p class="mt-2 text-gray-600">Meta de Reducción de Anemia (2027)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-4xl font-bold text-[#FFD166]">S/ 130 M</p>
+                    <p class="mt-2 text-gray-600">Inversión Estratégica Total</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-4xl font-bold text-[#118AB2]">10 Regiones</p>
+                    <p class="mt-2 text-gray-600">Focalización Prioritaria</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenge" class="py-12">
+            <h2 class="text-3xl font-bold text-center text-[#073B4C]">El Desafío: Una Brecha Nacional</h2>
+            <p class="mt-4 text-center max-w-3xl mx-auto text-gray-600">La prevalencia de la anemia infantil varía drásticamente a lo largo del país. El proyecto focaliza el 70% de sus recursos en las 10 regiones más críticas, donde los índices superan con creces el promedio nacional.</p>
+            <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-center mb-4">Comparativa de Anemia: Regiones Prioritarias vs. Promedio Nacional (2024E)</h3>
+                <div class="chart-container">
+                    <canvas id="regionalAnemiaChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="py-12">
+            <h2 class="text-3xl font-bold text-center text-[#073B4C]">La Solución Estratégica: 5 Ejes Integrados</h2>
+            <p class="mt-4 text-center max-w-3xl mx-auto text-gray-600">El éxito del proyecto se basa en un modelo sinérgico que articula el suministro, la capacitación, la logística y la tecnología para garantizar un impacto real y medible.</p>
+            <div class="mt-8 flex flex-wrap justify-center items-center text-center">
+                <div class="flow-item p-4">
+                    <div class="bg-[#118AB2] text-white p-6 rounded-lg shadow-lg w-48 h-48 flex flex-col justify-center">
+                        <span class="text-2xl font-bold">Eje 1</span>
+                        <span class="mt-2">Nutrición y Suministro</span>
+                    </div>
+                    <div class="flow-arrow hidden md:inline-block"></div>
+                </div>
+                <div class="flow-item p-4">
+                    <div class="bg-[#06D6A0] text-white p-6 rounded-lg shadow-lg w-48 h-48 flex flex-col justify-center">
+                        <span class="text-2xl font-bold">Eje 2</span>
+                        <span class="mt-2">Capacitación Comunitaria</span>
+                    </div>
+                    <div class="flow-arrow hidden md:inline-block"></div>
+                </div>
+                <div class="flow-item p-4">
+                    <div class="bg-[#FFD166] text-[#073B4C] p-6 rounded-lg shadow-lg w-48 h-48 flex flex-col justify-center">
+                        <span class="text-2xl font-bold">Eje 3</span>
+                        <span class="mt-2">Articulación Intersectorial</span>
+                    </div>
+                    <div class="flow-arrow hidden md:inline-block"></div>
+                </div>
+                <div class="flow-item p-4">
+                    <div class="bg-[#FF6B6B] text-white p-6 rounded-lg shadow-lg w-48 h-48 flex flex-col justify-center">
+                        <span class="text-2xl font-bold">Eje 4</span>
+                        <span class="mt-2">Despliegue en Campo</span>
+                    </div>
+                     <div class="flow-arrow hidden md:inline-block"></div>
+                </div>
+                <div class="flow-item p-4">
+                     <div class="bg-[#073B4C] text-white p-6 rounded-lg shadow-lg w-48 h-48 flex flex-col justify-center">
+                        <span class="text-2xl font-bold">Eje 5</span>
+                        <span class="mt-2">Innovación y Monitoreo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="investment" class="py-12">
+            <h2 class="text-3xl font-bold text-center text-[#073B4C]">La Inversión: S/ 130 Millones con Propósito</h2>
+            <p class="mt-4 text-center max-w-3xl mx-auto text-gray-600">Cada sol del presupuesto está asignado estratégicamente para maximizar el impacto, priorizando la acción directa en las comunidades más vulnerables.</p>
+            <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+                 <h3 class="text-xl font-semibold text-center mb-4">Distribución Presupuestal por Eje Estratégico</h3>
+                <div class="chart-container h-[350px] md:h-[400px] max-w-md">
+                    <canvas id="budgetDonutChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="py-12">
+             <h2 class="text-3xl font-bold text-center text-[#073B4C]">El Plan de Acción: 26 Meses de Intervención</h2>
+             <p class="mt-4 text-center max-w-3xl mx-auto text-gray-600">El proyecto se ejecuta en tres fases claramente definidas para asegurar una implementación ordenada y un cierre sostenible.</p>
+             <div class="mt-8 relative">
+                 <div class="border-l-4 border-[#118AB2] absolute h-full top-0 left-1/2 -ml-px"></div>
+                 <div class="space-y-12">
+                     <!-- FASE 1: Se añade flow-root para contener el float-left y evitar el colapso de altura. -->
+                     <div class="relative flow-root">
+                         <div class="absolute w-8 h-8 bg-[#118AB2] rounded-full top-0 left-1/2 -ml-4 flex items-center justify-center text-white font-bold z-10">1</div>
+                         <div class="ml-12 md:ml-0 md:w-5/12 md:float-left md:text-right p-4">
+                             <h3 class="font-bold text-xl">Planificación y Contratación</h3>
+                             <p class="text-sm text-gray-500">Nov 2025 – Abr 2026</p>
+                             <p class="mt-2">Firma de convenios, licitaciones y desarrollo de la "Escudo App".</p>
+                         </div>
+                     </div>
+                     <!-- FASE 2: Se añade flow-root para contener el float-right. -->
+                     <div class="relative flow-root">
+                         <div class="absolute w-8 h-8 bg-[#06D6A0] rounded-full top-0 left-1/2 -ml-4 flex items-center justify-center text-white font-bold z-10">2</div>
+                         <div class="mr-12 md:mr-0 md:w-5/12 md:float-right p-4">
+                             <h3 class="font-bold text-xl">Despliegue e Implementación</h3>
+                             <p class="text-sm text-gray-500">May 2026 – Jun 2027</p>
+                             <p class="mt-2">Movilización de brigadas, campañas masivas y talleres "Madres de Hierro".</p>
+                         </div>
+                     </div>
+                      <!-- FASE 3: Se añade flow-root para contener el float-left. -->
+                      <div class="relative flow-root">
+                         <div class="absolute w-8 h-8 bg-[#FFD166] rounded-full top-0 left-1/2 -ml-4 flex items-center justify-center text-white font-bold z-10">3</div>
+                         <div class="ml-12 md:ml-0 md:w-5/12 md:float-left md:text-right p-4">
+                             <h3 class="font-bold text-xl">Consolidación y Evaluación</h3>
+                             <p class="text-sm text-gray-500">Jul 2027 – Dic 2027</p>
+                             <p class="mt-2">Medición de impacto final y transferencia de capacidades a entidades locales.</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <section id="nutrition" class="py-12">
+            <h2 class="text-3xl font-bold text-center text-[#073B4C]">La Clave del Éxito: Nutrición Práctica y Aceptable</h2>
+            <p class="mt-4 text-center max-w-3xl mx-auto text-gray-600">El cambio real ocurre en la cocina. El Eje 2 "Madres de Hierro" se enfoca en enseñar preparaciones ricas en hierro que los niños disfruten, asegurando la adherencia al tratamiento.</p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold text-[#FF6B6B]">🩸 Sangrecita</h3>
+                    <p class="mt-2 text-gray-500">La fuente más potente y accesible de hierro.</p>
+                    <ul class="mt-4 space-y-2 list-disc list-inside">
+                        <li><span class="font-semibold">Muffins de Cocoa:</span> Un postre que enmascara el sabor.</li>
+                        <li><span class="font-semibold">Mazamorra Fortificada:</span> Textura suave para los más pequeños.</li>
+                        <li><span class="font-semibold">Guiso de Arroz:</span> Integrada en el plato principal diario.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold text-[#118AB2]"> liver Hígado y Bazo</h3>
+                    <p class="mt-2 text-gray-500">Altas concentraciones de hierro de fácil absorción.</p>
+                     <ul class="mt-4 space-y-2 list-disc list-inside">
+                        <li><span class="font-semibold">Sopa Enriquecida:</span> Licuado y diluido en caldos.</li>
+                        <li><span class="font-semibold">Puré Camuflado:</span> Mezclado con zapallo y camote dulce.</li>
+                        <li><span class="font-semibold">Guiso de Menestras:</span> El sabor de las legumbres domina.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold text-[#06D6A0]">🐟 Pescado Oscuro</h3>
+                    <p class="mt-2 text-gray-500">Rico en hierro y Omega-3 para el cerebro.</p>
+                     <ul class="mt-4 space-y-2 list-disc list-inside">
+                        <li><span class="font-semibold">Tortillas y Budines:</span> Textura blanda y fácil de comer.</li>
+                        <li><span class="font-semibold">Hamburguesas Caseras:</span> Formato divertido y aceptado.</li>
+                        <li><span class="font-semibold">Ensalada Potenciada:</span> Opción fresca con limón para absorber mejor el hierro.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="py-12">
+            <h2 class="text-3xl font-bold text-center text-[#073B4C]">Midiendo el Impacto: Metas Claras al 2027</h2>
+            <p class="mt-4 text-center max-w-3xl mx-auto text-gray-600">El éxito se define por resultados concretos. Estos son los Indicadores Clave de Desempeño (KPIs) que guiarán y medirán el impacto del proyecto.</p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="font-semibold">Cobertura de Suplementación</h3>
+                    <p class="text-3xl font-bold text-[#06D6A0] mt-2">90%</p>
+                    <p class="text-sm text-gray-500">(Línea Base: 65%)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="font-semibold">Madres Capacitadas</h3>
+                    <p class="text-3xl font-bold text-[#118AB2] mt-2">50,000</p>
+                    <p class="text-sm text-gray-500">(Acumulado)</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="font-semibold">Reducción DCI</h3>
+                    <p class="text-3xl font-bold text-[#FFD166] mt-2">8.0%</p>
+                    <p class="text-sm text-gray-500">(Línea Base: 11.2%)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="font-semibold">Uso "Escudo App"</h3>
+                    <p class="text-3xl font-bold text-[#073B4C] mt-2">100%</p>
+                    <p class="text-sm text-gray-500">(De brigadas activas)</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#073B4C] text-white py-8 text-center">
+         <p class="text-sm text-gray-300">© 2025 Proyecto PERÚ FUERTE: Escudo de Hierro. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const wrapLabel = (label, maxWidth = 16) => {
+                if (label.length <= maxWidth) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+            
+            const regionalData = {
+                nationalAverage: 41.8,
+                regions: [
+                    { name: 'Puno', value: 69.0 },
+                    { name: 'Huancavelica', value: 59.8 },
+                    { name: 'Ucayali', value: 62.5 },
+                    { name: 'Loreto', value: 54.7 },
+                    { name: 'Madre de Dios', value: 55.1 },
+                    { name: 'Cajamarca', value: 50.3 },
+                    { name: 'Ayacucho', value: 49.5 },
+                    { name: 'Amazonas', value: 48.9 },
+                    { name: 'Pasco', value: 47.0 },
+                    { name: 'San Martín', value: 45.2 },
+                ]
+            };
+            
+            const regionalCtx = document.getElementById('regionalAnemiaChart').getContext('2d');
+            new Chart(regionalCtx, {
+                type: 'bar',
+                data: {
+                    labels: regionalData.regions.map(r => wrapLabel(r.name)),
+                    datasets: [{
+                        label: 'Prevalencia de Anemia Regional (%)',
+                        data: regionalData.regions.map(r => r.value),
+                        backgroundColor: '#FF6B6B',
+                        borderColor: '#FF6B6B',
+                        borderWidth: 1
+                    }, {
+                        label: 'Promedio Nacional (%)',
+                        data: Array(regionalData.regions.length).fill(regionalData.nationalAverage),
+                        type: 'line',
+                        borderColor: '#118AB2',
+                        borderWidth: 2,
+                        pointRadius: 0,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Prevalencia (%)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+
+            const budgetData = {
+                labels: ['Nutrición y Suministro', 'Despliegue en Campo', 'Capacitación Comunitaria', 'Articulación', 'Innovación y Monitoreo'],
+                values: [52000000, 32500000, 19500000, 13000000, 13000000],
+                percentages: [40, 25, 15, 10, 10]
+            };
+
+            const budgetCtx = document.getElementById('budgetDonutChart').getContext('2d');
+            new Chart(budgetCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: budgetData.labels.map((label, i) => `${label} (${budgetData.percentages[i]}%)`),
+                    datasets: [{
+                        data: budgetData.values,
+                        backgroundColor: ['#118AB2', '#FF6B6B', '#06D6A0', '#FFD166', '#073B4C'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback,
+                                label: function(context) {
+                                    let value = context.raw;
+                                    return `S/ ${value.toLocaleString('es-PE')}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
